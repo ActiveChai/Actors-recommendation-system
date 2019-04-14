@@ -1,0 +1,14 @@
+.left {
+    width: 500px;
+    /* height: 300px; */
+    /* background-color: #aaa; */
+    float: left;
+    margin-top: 30px;
+}
+
+.title {
+    /* margin-left: 210px; */
+    margin-bottom: 20px;
+    color: #006cff;
+    /* color: black; */
+}

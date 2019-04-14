@@ -1,6 +1,6 @@
 <template>
     <div class="search">
-        <el-input class="search-p" placeholder="请输入摘要" v-model="search" clearable></el-input>
+        <el-input class="search-p" placeholder="请输入演员" v-model="search" clearable></el-input>
         <button class="el-button el-button--primary btn-p">
             <i class="el-icon-search"/>
         </button>

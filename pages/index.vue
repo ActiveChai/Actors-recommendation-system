@@ -1,12 +1,37 @@
 <template>
-    <section class="container">
-        <div>1</div>
-    </section>
+    <div class="main-search">
+        <div class="icon-title">
+            <span class="iconfont">&#xe685;</span>
+            <span>+</span>
+            <span class="iconfont">&#xe684;</span>
+            <span>
+                -----
+                <span class="iconfont">&#xe60b;</span> ----->
+            </span>
+            <span class="iconfont">&#xe600;</span>
+            <!-- <span class="iconfont">&#xe685;</span>
+            <span class="iconfont">&#xe60a;</span>
+            <span class="iconfont">&#xe685;</span>
+            <span class="iconfont">&#xe609;</span>
+            <span class="iconfont">&#xe68a;</span>-->
+        </div>
+        <el-card class="box-card">
+            <el-input type="textarea" :rows="7" placeholder="请输入摘要" v-model="textarea"></el-input>
+        </el-card>
+        <el-button class="btn" type="primary">演员推荐</el-button>
+    </div>
 </template>
 
 <script>
-export default {}
+export default {
+    data() {
+        return {
+            textarea: ''
+        }
+    }
+}
 </script>
 
 <style>
+@import '@/assets/css/index/index.css';
 </style>

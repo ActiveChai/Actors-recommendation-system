@@ -2,12 +2,15 @@
     /* float: right; */
     position: relative;
     padding-top: 10px;
+    /* margin-right: 30px; */
 }
 
 .search-p {
     /* right: 56px; */
-    left: 643px;
+    left: 640px;
     width: 300px;
+    border: 1px solid #DCDFE6;
+    border-radius: 4px;
 }
 
 .btn-p {
