@@ -1,11 +1,24 @@
 <template>
-    <el-container>
-        <el-header>Header</el-header>
-        <el-main>
+    <div>
+        <div class="header">
+            <my-header/>
+        </div>
+        <div class="main">
             <nuxt/>
-        </el-main>
-    </el-container>
+        </div>
+    </div>
 </template>
 
+<script>
+import MyHeader from '@/components/public/header/index.vue'
+
+export default {
+    components: {
+        MyHeader
+    }
+}
+</script>
+
 <style>
+@import "@/assets/css/public/layout.css";
 </style>
