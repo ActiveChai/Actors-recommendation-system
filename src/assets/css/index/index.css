@@ -1,0 +1,30 @@
+.main-search {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    width: 600px;
+    margin-left: -140px;
+}
+
+.icon-title {
+    /* color: #409EFF; */
+    /* color: black; */
+    color: #ccc;
+    margin-bottom: 60px;
+    font-size: 37px;
+    text-align: center;
+}
+
+.box-card .el-textarea__inner {
+    resize: none;
+    border: none;
+}
+
+.main-search .btn {
+    position: absolute;
+    left: 50%;
+    top: 305px;
+    margin-left: -300px;
+    padding: 12px 271px;
+    /* box-shadow: 3px 3px 2px #409EFF; */
+}

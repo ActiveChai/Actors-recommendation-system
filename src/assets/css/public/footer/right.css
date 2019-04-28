@@ -1,0 +1,14 @@
+.title {
+    /* margin-left: 210px; */
+    margin-bottom: 20px;
+    /* color: #006cff; */
+    color: black;
+}
+
+.right {
+    width: 500px;
+    /* height: 500px; */
+    /* background-color: #ccc; */
+    float: right;
+    margin-top: 30px;
+}

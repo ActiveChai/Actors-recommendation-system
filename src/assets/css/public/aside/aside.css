@@ -1,0 +1,29 @@
+.side {
+    height: 500px;
+    position: absolute;
+    width: 260px;
+    top: 92px;
+    right: 50%;
+    margin-right: 260px;
+}
+
+.side .el-card__header {
+    padding: 10px 20px;
+    margin-left: 9px;
+}
+
+.side .el-input__inner {
+    border: none;
+}
+
+.text {
+    margin-left: 20px;
+}
+
+.top {
+    margin-top: 26px;
+}
+
+.side .el-button--text {
+    color: black;
+}

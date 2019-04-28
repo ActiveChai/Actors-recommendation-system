@@ -1,25 +1,30 @@
 {
-  "name": "Actors-recommendation-system",
-  "version": "1.0.0",
-  "description": "基于豆瓣大数据的演员推荐系统",
-  "author": "ActiveChai",
+  "name": "actors-recommendation-system",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
-    "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server/index.js",
-    "generate": "nuxt generate"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
-    "cross-env": "^5.2.0",
+    "core-js": "^2.6.5",
     "echarts": "^4.2.1",
-    "element-ui": "^2.4.11",
-    "koa": "^2.6.2",
-    "nuxt": "^2.4.0",
-    "v-charts": "^1.19.0"
+    "element-ui": "^2.4.5",
+    "v-charts": "^1.19.0",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "@vue/cli-plugin-babel": "^3.6.0",
+    "@vue/cli-plugin-eslint": "^3.6.0",
+    "@vue/cli-service": "^3.6.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-template-compiler": "^2.5.21"
   }
 }
