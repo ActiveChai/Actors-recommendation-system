@@ -10,6 +10,7 @@ import Headline from './headline'
 import SearchBar from './searchBar'
 
 export default {
+    name: 'myheader',
     components: {
         Headline,
         SearchBar
@@ -18,5 +19,5 @@ export default {
 </script>
 
 <style scoped>
-@import "./../../../assets/css/public/header/index.css";
+@import './../../../assets/css/public/header/index.css';
 </style>

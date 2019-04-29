@@ -5,7 +5,7 @@
         </el-header>
         <el-container>
             <el-aside width="200px">
-                <my-side/>
+                <my-aside/>
             </el-aside>
             <el-main>
                 <router-view/>
@@ -19,14 +19,14 @@
 
 <script>
 import MyHeader from './components/public/header/index.vue'
-import MySide from './components/public/aside/index.vue'
+import MyAside from './components/public/aside/index.vue'
 import MyFooter from './components/public/footer/index.vue'
 
 export default {
     name: 'app',
     components: {
         MyHeader,
-        MySide,
+        MyAside,
         MyFooter
     }
 }

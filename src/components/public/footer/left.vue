@@ -11,6 +11,7 @@
 import VeMap from 'v-charts/lib/map.common'
 
 export default {
+    name: 'mleft',
     components: {
         VeMap
     },
@@ -27,7 +28,7 @@ export default {
             // selectedMode: 'single'
         }
         return {
-            map:'',
+            map: '',
             cityName: '',
             chartData: {
                 columns: ['位置', '人数']

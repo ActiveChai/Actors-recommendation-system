@@ -10,6 +10,7 @@ import mLeft from './left'
 import mRight from './right'
 
 export default {
+    name: 'myfooter',
     components: {
         mLeft,
         mRight

@@ -13,6 +13,7 @@
 import VePie from 'v-charts/lib/pie.common'
 
 export default {
+    name: 'mright',
     components: {
         VePie
     },

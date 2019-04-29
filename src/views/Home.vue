@@ -24,7 +24,7 @@
 
 <script>
 export default {
-    name: 'Home',
+    name: 'home',
     data() {
         return {
             textarea: ''

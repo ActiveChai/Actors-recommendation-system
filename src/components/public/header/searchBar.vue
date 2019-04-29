@@ -9,6 +9,7 @@
 
 <script>
 export default {
+    name: 'searchbar',
     data() {
         return {
             search: ''
