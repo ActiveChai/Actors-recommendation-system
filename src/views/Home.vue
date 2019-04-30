@@ -1,5 +1,6 @@
 <template>
     <div class="main-search">
+        <!-- 不用 key -->
         <div class="icon-title">
             <span class="iconfont">&#xe685;</span>
             <span>+</span>
@@ -29,11 +30,15 @@ export default {
         return {
             textarea: ''
         }
+    },
+    computed: {
+        key() {
+            return this.$route.path + Math.random()
+        }
     }
 }
 </script>
 
 <style scoped>
-@import './../assets/css/index/index.css';
+@import './../assets/css/main/home.css';
 </style>
-

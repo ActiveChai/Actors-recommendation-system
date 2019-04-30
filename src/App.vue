@@ -9,6 +9,7 @@
             </el-aside>
             <el-main>
                 <router-view/>
+                <!-- 不用 key -->
             </el-main>
         </el-container>
         <el-footer class="footer">
@@ -28,6 +29,14 @@ export default {
         MyHeader,
         MyAside,
         MyFooter
+    },
+    data() {
+        return {}
+    },
+    computed: {
+        key() {
+            return this.$route.path + Math.random()
+        }
     }
 }
 </script>

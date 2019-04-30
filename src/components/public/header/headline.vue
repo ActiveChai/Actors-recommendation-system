@@ -1,17 +1,20 @@
 <template>
     <div class="headline">
-        <!-- <nuxt-link to="/"> -->
-        <span class="iconfont">&#xe67c;</span> 演员推荐系统
-        <!-- </nuxt-link> -->
+        <router-link :to="{path:'/'}">
+            <span class="iconfont">&#xe67c;</span>
+            演员推荐系统
+        </router-link>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'headline'
+    name: 'headline',
+    data() {
+        return {}
+    }
 }
 </script>
-
 
 <style scoped>
 @import './../../../assets/css/public/header/headline.css';
