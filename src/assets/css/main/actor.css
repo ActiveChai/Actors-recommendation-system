@@ -1,7 +1,25 @@
 .main-actor {
     position: absolute;
-    top: 300px;
+    top: 100px;
     left: 50%;
     width: 600px;
     margin-left: -140px;
+    height: 800px;
+}
+
+.body {
+    height: 400px;
+}
+
+.img {
+    margin-top: 25px;
+    margin-left: 16px;
+}
+
+.actor {
+    height: 400px;
+    width: 280px;
+    float: right;
+    margin-right: 16px;
+    line-height: 22px;
 }
