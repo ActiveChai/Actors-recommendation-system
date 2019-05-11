@@ -19,7 +19,9 @@
         <el-card class="box-card">
             <el-input type="textarea" :rows="7" placeholder="输入剧本摘要就能查看推荐的演员哦" v-model="textarea"></el-input>
         </el-card>
-        <el-button class="btn" type="primary">演员推荐</el-button>
+        <router-link to="/result">
+            <el-button class="btn" type="primary">演员推荐</el-button>
+        </router-link>
     </div>
 </template>
 
