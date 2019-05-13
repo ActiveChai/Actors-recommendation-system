@@ -12,6 +12,8 @@ import './assets/css/normalize.css'
 import './assets/iconfont/iconfont.css'
 
 Vue.prototype.$http = axios // ?
+Vue.prototype.bus = new Vue()
+
 Vue.config.productionTip = false
 
 new Vue({

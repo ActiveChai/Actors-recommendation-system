@@ -13,7 +13,7 @@
             </div>
             <div class="text" v-for="item in actors" :key="item.name">
                 <router-link :to="{ name: 'actor', params:{ id: item.id}}" :key="item.id">
-                    <el-button type="text">
+                    <el-button @click="saveItem(item)" type="text" :key="item.id">
                         <span class="iconfont">&#xe61a;</span>
                         {{ item.name }}
                     </el-button>
@@ -47,57 +47,27 @@ export default {
                 }
             ],
             value: '',
-            actors: [
-                // {
-                //     id: '1005110',
-                //     name: '黄圣依 Eva Huang'
-                // },
-                // {
-                //     id: '1048026',
-                //     name: '周星驰 Stephen Chow'
-                // },
-                // {
-                //     id: '1050240',
-                //     name: '元华 Wah Yuen'
-                // },
-                // {
-                //     id: '1202926',
-                //     name: '释彦能 Xingyu Shi'
-                // },
-                // {
-                //     id: '1229775',
-                //     name: '陈国坤 Kwok-Kwan Chan'
-                // },
-                // {
-                //     id: '1274255',
-                //     name: '冯小刚 Xiaogang Feng'
-                // },
-                // {
-                //     id: '1274267',
-                //     name: '梁小龙 Siu-Lung Leung'
-                // },
-                // {
-                //     id: '1274279',
-                //     name: '林雪 Suet Lam'
-                // },
-                // {
-                //     id: '1274936',
-                //     name: '董志华 Zhihua Dong'
-                // }
-            ]
+            actors: []
         }
     },
     mounted() {
         this.$http
-            .get('/api/actor/1050240')
+            .get('/api/popular')
             .then(response => {
-                this.actors = Object.values(response)[0]["person"]//接口返回的不是数组
+                this.actors = Object.values(response)[0]['person'] //接口返回的不是数组
                 // console.log(Object.values(response)[0]["person"])
             })
             .catch(error => {
                 console.log(error)
             })
         // this.actors = await axios.get('/api/actor/1005110')
+    },
+    methods: {
+        saveItem: function(item) {
+            //用箭头函数会报错，this指向问题
+            this.bus.$emit('get', item)
+            // console.log(item)
+        }
     }
 }
 </script>

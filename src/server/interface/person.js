@@ -21,4 +21,11 @@ router.get('/actor', async (ctx) => {
     }
 })
 
+router.get('/popular', async (ctx) => {
+    let person = await Person.find({ birthday: '1983-02-11' })
+    ctx.body = {
+        person
+    }
+})
+
 module.exports = router

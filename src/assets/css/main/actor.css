@@ -12,14 +12,17 @@
 }
 
 .img {
-    margin-top: 25px;
-    margin-left: 16px;
+    /* position: relative;
+    top: 50%;
+    margin-top: -200px; */
+    /* margin-top: 25px; */
+    /* margin-left: 0px; */
 }
 
 .actor {
     height: 400px;
-    width: 280px;
+    width: 260px;
     float: right;
-    margin-right: 16px;
+    margin-right: 10px;
     line-height: 22px;
 }
