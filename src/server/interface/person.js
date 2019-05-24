@@ -14,18 +14,17 @@ router.get('/actor/:id', async (ctx) => {
     }
 })
 
-router.get('/actor', async (ctx) => {
-    let person = await Person.find()
-    ctx.body = {
-        person
-    }
-})
-
 router.get('/popular', async (ctx) => {
     let person = await Person.find({ birthday: '1983-02-11' })
     ctx.body = {
         person
     }
+})
+
+router.post('/actor', async (ctx) => {
+    const id = ctx.request.body.id
+    let person = await Person.find({ id: id })
+    ctx.response.body = person
 })
 
 module.exports = router

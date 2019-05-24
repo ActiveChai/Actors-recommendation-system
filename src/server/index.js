@@ -1,11 +1,11 @@
-// const bodyParser = require('koa-bodyparser')
+const bodyParser = require('koa-bodyparser')
 const Koa = require('koa')
 const mongoose = require('mongoose')
 const dbConfig = require('./dbs/config')
 const person = require('./interface/person')
 
 const app = new Koa()
-// app.use(bodyParser())
+app.use(bodyParser())
 
 app.use(person.routes()).use(person.allowedMethods())
 

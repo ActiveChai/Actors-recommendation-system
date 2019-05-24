@@ -13,7 +13,7 @@
             </div>
             <div class="text" v-for="item in actors" :key="item.name">
                 <router-link :to="{ name: 'actor', params:{ id: item.id}}" :key="item.id">
-                    <el-button @click="saveItem(item)" type="text" :key="item.id">
+                    <el-button type="text" :key="item.id">
                         <span class="iconfont">&#xe61a;</span>
                         {{ item.name }}
                     </el-button>
@@ -25,15 +25,8 @@
 </template>
 
 <script>
-// import axios from 'axios'
-
-// Vue.prototype.$ajax = axios
-
 export default {
     name: 'myaside',
-    // components: {
-    //     axios
-    // },
     data() {
         return {
             options: [
@@ -55,19 +48,10 @@ export default {
             .get('/api/popular')
             .then(response => {
                 this.actors = Object.values(response)[0]['person'] //接口返回的不是数组
-                // console.log(Object.values(response)[0]["person"])
             })
             .catch(error => {
                 console.log(error)
             })
-        // this.actors = await axios.get('/api/actor/1005110')
-    },
-    methods: {
-        saveItem: function(item) {
-            //用箭头函数会报错，this指向问题
-            this.bus.$emit('get', item)
-            // console.log(item)
-        }
     }
 }
 </script>
