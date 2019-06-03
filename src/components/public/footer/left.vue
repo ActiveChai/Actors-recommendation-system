@@ -23,17 +23,27 @@ export default {
                 normal: {
                     areaColor: '#40BFFF'
                 }
-            }
-            // selectData: true,
-            // selectedMode: 'single'
+            },
+            // selectData: true
+            selectedMode: 'single'
         }
         return {
             map: '',
-            cityName: '',
             chartData: {
-                columns: ['位置', '人数']
+                columns: ['country', 'actorNum'],
+                rows: []
             }
         }
+    },
+    mounted() {
+        this.$http
+            .get('/api/country')
+            .then(response => {
+                this.chartData['rows'] = Object.values(response)[0]['country'] // 接口返回的不是数组
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
 }
 </script>
@@ -41,4 +51,3 @@ export default {
 <style scoped>
 @import './../../../assets/css/public/footer/left.css';
 </style>
-

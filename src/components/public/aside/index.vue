@@ -1,57 +1,77 @@
 <template>
     <div class="side">
         <el-card class="box-card">
-            <div slot="header" class="clearfix">
-                <el-select v-model="value" clearable placeholder="拍戏最多的演员">
-                    <el-option
-                        v-for="item in options"
-                        :key="item.value"
-                        :label="item.label"
-                        :value="item.value"
-                    ></el-option>
-                </el-select>
+            <div slot="header" class="clearfix t">
+                <span class="iconfont">&#xe683;</span>拍戏最多的演员
+                <el-button class="charts" type="primary" @click="change">图览</el-button>
             </div>
-            <div class="text" v-for="item in actors" :key="item.name">
-                <router-link :to="{ name: 'actor', params:{ id: item.id}}" :key="item.id">
-                    <el-button type="text" :key="item.id">
-                        <span class="iconfont">&#xe61a;</span>
-                        {{ item.name }}
-                    </el-button>
-                </router-link>
-            </div>
-            <el-pagination class="top" background layout="prev, pager, next" :total="30"></el-pagination>
+            <template v-if="chart">
+                <div class="text" v-for="item in actors" :key="item.name">
+                    <router-link :to="{ name: 'actor', params:{ name: item.name}}" :key="item.id">
+                        <el-button type="text" :key="item.id">
+                            <span class="iconfont">&#xe61a;</span>
+                            {{ item.name}}
+                            <span
+                                class="num"
+                            >{{item.filmNum}}</span>
+                        </el-button>
+                    </router-link>
+                </div>
+            </template>
+            <template v-else>
+                <ve-bar :data="chartData" :settings="chartSettings"></ve-bar>
+            </template>
         </el-card>
     </div>
 </template>
 
 <script>
+import VeBar from 'v-charts/lib/bar.common'
+
 export default {
     name: 'myaside',
+    components: {
+        VeBar
+    },
     data() {
+        this.chartSettings = {
+            dimension: ['actor'],
+            metrics: ['filmNum'],
+            dataOrder: {
+                label: 'filmNum',
+                order: 'desc'
+            }
+        }
         return {
-            options: [
-                {
-                    value: '选项1',
-                    label: '拍戏最多的演员'
-                },
-                {
-                    value: '选项2',
-                    label: '今年最火的演员'
-                }
-            ],
             value: '',
-            actors: []
+            actors: [],
+            chart: true,
+            chartData: {
+                columns: ['actor', 'filmNum'],
+                rows: []
+            }
         }
     },
     mounted() {
         this.$http
-            .get('/api/popular')
+            .get('/api/most')
             .then(response => {
-                this.actors = Object.values(response)[0]['person'] //接口返回的不是数组
+                this.actors = Object.values(response)[0]['most'] //接口返回的不是数组
             })
             .catch(error => {
                 console.log(error)
             })
+    },
+    methods: {
+        change: function() {
+            this.chart = !this.chart
+            this.actors.forEach((item, index) => {
+                this.chartData['rows'][index] = {
+                    actor: item.name.split(' ')[0], //去除英文名
+                    filmNum: item.filmNum
+                }
+            })
+        }
     }
 }
 </script>

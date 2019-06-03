@@ -3,7 +3,7 @@
     top: 100px;
     left: 50%;
     width: 600px;
-    margin-left: -140px;
+    margin-left: -80px;
     height: 800px;
 }
 
@@ -11,18 +11,34 @@
     height: 400px;
 }
 
-.img {
-    /* position: relative;
-    top: 50%;
-    margin-top: -200px; */
-    /* margin-top: 25px; */
-    /* margin-left: 0px; */
-}
-
 .actor {
     height: 400px;
     width: 260px;
     float: right;
-    margin-right: 10px;
+    margin-right: 22px;
     line-height: 22px;
+    overflow: auto;
+}
+
+.film {
+    position: absolute;
+    right: 60px;
+    top: 8px;
+}
+
+.name {
+    font-weight: 600;
+}
+
+.picture {
+    overflow: auto;
+    height: 400px;
+}
+
+.img {
+    float: right;
+    width: 260px;
+    height: 340px;
+    overflow: auto;
+    margin-top: 20px;
 }

@@ -1,10 +1,10 @@
 .side {
     height: 500px;
     position: absolute;
-    width: 260px;
-    top: 92px;
+    width: 360px;
+    top: 100px;
     right: 50%;
-    margin-right: 260px;
+    margin-right: 160px;
 }
 
 .side .el-card__header {
@@ -17,13 +17,26 @@
 }
 
 .text {
-    margin-left: 20px;
-}
-
-.top {
-    margin-top: 26px;
+    margin-left: 5px;
 }
 
 .side .el-button--text {
     color: black;
+}
+
+.t {
+    margin-left: -2px;
+    color: #006cff;
+    padding: 7.5px 0;
+}
+
+.num {
+    position: absolute;
+    right: 30px;
+}
+
+.charts {
+    position: absolute;
+    right: 25px;
+    top: 8px;
 }
