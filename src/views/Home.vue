@@ -12,10 +12,10 @@
             <span class="iconfont">&#xe600;</span>
         </div>
         <el-card class="box-card">
-            <el-input type="textarea" :rows="7" placeholder="输入剧本摘要就能查看推荐的演员哦" v-model="textarea"></el-input>
+            <el-input type="textarea" :rows="7" placeholder="输入剧本摘要就能查看推荐的演员哦" v-model="content"></el-input>
         </el-card>
         <router-link to="/result">
-            <el-button class="btn" type="primary">演员推荐</el-button>
+            <el-button class="btn" type="primary" @click="recommend">演员推荐</el-button>
         </router-link>
     </div>
 </template>
@@ -25,12 +25,19 @@ export default {
     name: 'home',
     data() {
         return {
-            textarea: ''
+            content: ''
         }
     },
-    computed: {
-        key() {
-            return this.$route.path + Math.random()
+    methods: {
+        recommend: function() {
+            this.$http
+                .post('/api/insertSummary', {
+                    content: this.content
+                })
+                .then(response => {})
+                .catch(error => {
+                    console.log(error)
+                })
         }
     }
 }

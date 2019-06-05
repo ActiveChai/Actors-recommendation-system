@@ -11,7 +11,9 @@ import './plugins/element'
 import './assets/css/normalize.css'
 import './assets/iconfont/iconfont.css'
 
-Vue.prototype.$http = axios // ?
+Vue.prototype.$http = axios.create({
+    timeout: 15000
+}) // ?
 Vue.prototype.bus = new Vue()
 
 Vue.config.productionTip = false

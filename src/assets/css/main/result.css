@@ -6,3 +6,27 @@
     margin-left: -140px;
     height: 800px;
 }
+
+.place {
+    position: absolute;
+    right: 50px;
+    top: 70px;
+}
+
+.p {
+    position: absolute;
+    top: 20px;
+    left: 280px;
+}
+
+.h {
+    height: 392px;
+    overflow: auto;
+}
+
+.aname {
+    margin-right: 100px;
+    margin-top: -105px;
+    /* margin-bottom: 200px; */
+    float: right;
+}

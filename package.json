@@ -16,6 +16,8 @@
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "mongoose": "^5.5.7",
+    "qcloudapi-sdk": "^0.2.1",
+    "tencentcloud-sdk-nodejs": "^3.0.64",
     "v-charts": "^1.19.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",

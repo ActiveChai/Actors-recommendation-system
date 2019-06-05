@@ -29,7 +29,7 @@
                 </div>
             </template>
             <template v-else>
-                <div class="picture">
+                <div class="picture" :key="actor['name']">
                     <div v-for="item in img" :key="item.id">
                         <img :src="item.img">
                         <div class="img">

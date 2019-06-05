@@ -7,6 +7,9 @@ const country = require('./interface/country')
 const most = require('./interface/most')
 const movie = require('./interface/movie')
 const relationship = require('./interface/relationship')
+const content = require('./interface/content')
+const summary = require('./interface/summary')
+const ana = require('./interface/ana')
 
 const app = new Koa()
 app.use(bodyParser())
@@ -16,6 +19,9 @@ app.use(country.routes()).use(country.allowedMethods())
 app.use(most.routes()).use(most.allowedMethods())
 app.use(movie.routes()).use(movie.allowedMethods())
 app.use(relationship.routes()).use(relationship.allowedMethods())
+app.use(content.routes()).use(content.allowedMethods())
+app.use(summary.routes()).use(summary.allowedMethods())
+app.use(ana.routes()).use(ana.allowedMethods())
 
 // app.use(async ctx => {
 //     ctx.body = 'Hello World'
